@@ -1,3 +1,5 @@
-export const sum = args => {
-  return args.reduce((pre, cur) => pre + cur, 0)
+export const sum = (...args) => {
+  return [args].reduce((pre, cur) => {
+    return pre + cur
+  }, 0)
 }

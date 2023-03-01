@@ -1,13 +1,22 @@
+const ESLintPlugin = require('eslint-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const resolve = path.resolve
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: resolve(__dirname, 'dist'),
-    filename: 'static/js/boundle.js',
-    clean: true
+    path: resolve(__dirname, '../dist'), // 所有文件的输出目录
+    filename: undefined
+    // 开发环境没有输出文件，所以这个clean没有意义了
   },
+  // 开发服务器
+  devServer: {
+    host: 'localhost',
+    port: 8081,
+    open: true
+  },
+  // loader 加载器
   module: {
     rules: [
       { test: /\.css$/i, use: ['style-loader', 'css-loader'] },
@@ -22,6 +31,7 @@ module.exports = {
         parser: {
           dataUrlCondition: {
             // 一般限制10kb以内使用base64， 10kb以上还是使用url加载图片资源
+            // 减少请求数量
             maxSize: 10 * 1024 // 10kb
           }
         },
@@ -31,14 +41,28 @@ module.exports = {
       },
       {
         test: /\.ttf|woff2?$/i,
-        type: 'asset/resource', // 设置resource之后
+        type: 'asset/resource', // 设置resource之后，原封不动输出
         generator: {
           filename: 'static/font/[hash:8][ext][query]'
         }
+      },
+      // 将es6的新语法转化成旧语法，兼容性更好
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       }
     ]
   },
   // 插件
-  // plugins: [],
+  plugins: [
+    new ESLintPlugin({
+      context: resolve(__dirname, '../src')
+    }),
+    new HtmlWebpackPlugin({
+      template: resolve(__dirname, '../public/index.html') // 保留原来html中的内容
+    })
+  ],
+  // 开发模式
   mode: 'development'
 }
