@@ -206,7 +206,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style/index.css */ \"./src/style/index.css\");\n/* harmony import */ var _style_index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style/index.less */ \"./src/style/index.less\");\n/* harmony import */ var _style_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style/index.scss */ \"./src/style/index.scss\");\n/* harmony import */ var _style_index_sass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style/index.sass */ \"./src/style/index.sass\");\n/* harmony import */ var _style_iconfont_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style/iconfont.css */ \"./src/style/iconfont.css\");\n\n\n\n\n\n\n\n//# sourceURL=webpack://webpack5-config/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style/index.css */ \"./src/style/index.css\");\n/* harmony import */ var _style_index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style/index.less */ \"./src/style/index.less\");\n/* harmony import */ var _style_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style/index.scss */ \"./src/style/index.scss\");\n/* harmony import */ var _style_index_sass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style/index.sass */ \"./src/style/index.sass\");\n/* harmony import */ var _style_iconfont_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style/iconfont.css */ \"./src/style/iconfont.css\");\n/* harmony import */ var _utils_sum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/sum */ \"./src/utils/sum.js\");\n\n\n\n\n\n\nconsole.log((0,_utils_sum__WEBPACK_IMPORTED_MODULE_5__.sum)([1, 2, 4]))\n\n\n//# sourceURL=webpack://webpack5-config/./src/main.js?");
+
+/***/ }),
+
+/***/ "./src/utils/sum.js":
+/*!**************************!*\
+  !*** ./src/utils/sum.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"sum\": () => (/* binding */ sum)\n/* harmony export */ });\nconst sum = args => {\n  return args.reduce((pre, cur) => pre + cur, 0)\n}\n\n\n//# sourceURL=webpack://webpack5-config/./src/utils/sum.js?");
 
 /***/ }),
 
