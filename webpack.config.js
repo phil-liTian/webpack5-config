@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: 'boundle.js'
+    filename: 'static/js/boundle.js',
+    clean: true
   },
   module: {
     rules: [
@@ -23,6 +24,16 @@ module.exports = {
             // 一般限制10kb以内使用base64， 10kb以上还是使用url加载图片资源
             maxSize: 10 * 1024 // 10kb
           }
+        },
+        generator: {
+          filename: 'static/img/[hash:8][ext][query]'
+        }
+      },
+      {
+        test: /\.ttf|woff2?$/i,
+        type: 'asset/resource', // 设置resource之后
+        generator: {
+          filename: 'static/font/[hash:8][ext][query]'
         }
       }
     ]
